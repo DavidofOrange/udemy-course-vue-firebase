@@ -6,6 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 40%;
+            height: 50%;
+            text-align: center;
+            background-color: #ddd;
+            margin: 20px;
+            display: inline-block;
+            box-sizing: border-box;
+            
+        }
+        .box-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello Final Fantasy World</h1>
@@ -22,6 +43,13 @@
             <span v-if="showContents">Hide content</span>
             <span v-else>Show content</span>
         </button>
+
+        <div class="box-container">
+            <div class="box" @mouseover="handleEvent">mouseover enter</div>
+            <div class="box" @mouseleave="handleEvent">mouseleave</div>
+            <div class="box" @dblclick="handleEvent">double click</div>
+            <div class="box" @mousemove="handleMousemove">handleMousmove - {{ x }} - {{ y }}</div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
