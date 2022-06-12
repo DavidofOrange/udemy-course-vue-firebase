@@ -2,22 +2,16 @@ const app = Vue.createApp({
     data() {
         return {
             showContents: true,
-            title: "Cloud Strife",
-            num: 0,
-            x: 0,
-            y: 0
+            games: [
+                { title: "Final Fantasy 7", company: "Square Soft" },
+                { title: "Breath of the wild", company: "Nintendo" },
+                { title: "Witcher 3", company: "CD Red Project" }
+            ]
         }
     },
     methods: {
         toggleShowContent() {
             this.showContents = !this.showContents
-        },
-        handleEvent() {
-            console.log('event')
-        },
-        handleMousemove(e) {
-            this.x = e.offsetX
-            this.y = e.offsetY
         }
     }
 })

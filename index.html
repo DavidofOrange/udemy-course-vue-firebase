@@ -29,27 +29,21 @@
     </style>
 </head>
 <body>
-    <h1>Hello Final Fantasy World</h1>
+    <h1>Hello World!</h1>
 
     <div id="app">
         <div v-if="showContents">
-            <h2>The greatest Final Fantasy character is {{ title }}.</h2>
-            <h1 class="donationAmount">Donations: {{ num }}</h1>
-            <br>
-            <button @click="num++">Increase donations</button>
-            <button @click="num--">decrease donations</button>
+            <ul>
+                <li v-for="game in games">
+                    <p>{{ game.title }}</p>
+                    <p>{{ game.company }}</p>
+                </li>
+            </ul>
         </div>
         <button @click="toggleShowContent">
             <span v-if="showContents">Hide content</span>
             <span v-else>Show content</span>
         </button>
-
-        <div class="box-container">
-            <div class="box" @mouseover="handleEvent">mouseover enter</div>
-            <div class="box" @mouseleave="handleEvent">mouseleave</div>
-            <div class="box" @dblclick="handleEvent">double click</div>
-            <div class="box" @mousemove="handleMousemove">handleMousmove - {{ x }} - {{ y }}</div>
-        </div>
     </div>
     <script src="app.js"></script>
 </body>
